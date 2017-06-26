@@ -1,5 +1,5 @@
 {
-    "name": "herant/cache-buster-element-api",
+    "name": "Blocklevel/cache-buster-element-api",
     "description": "Cache busting for Element API paths",
     "type": "craftcms-plugin",
     "license": "MIT",

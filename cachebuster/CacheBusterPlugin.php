@@ -36,7 +36,7 @@ class CacheBusterPlugin extends BasePlugin
                 return;
             }
 
-            craft()->on('entries.onBeforeSaveEntry', function(Event $event) use ($matches) {
+            craft()->on('entries.onSaveEntry', function(Event $event) use ($matches) {
                 /** Clear the cache for the entry that's been saved -- BEGIN */
                     craft()->cacheBuster->bustEntry($event->params['entry'], $matches);
                 /** Clear the cache for the entry that's been saved -- END */

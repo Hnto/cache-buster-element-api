@@ -1,0 +1,38 @@
+{% import "_includes/forms" as forms %}
+
+
+{{ forms.textField({
+    first:        true,
+    label:        "Entries"|t,
+    id:           'entrypath',
+    name:         'entrypath',
+    instructions: "Please specifiy the api path of an entry
+                     <br /><br />
+                    <b>Example:</b> api/entry/{identifier} (identifier can be \"slug\" or \"id\")"|t,
+    value:        settings.entrypath,
+    autofocus:    true,
+    errors:       settings.getErrors('entrypath')
+}) }}
+
+
+{{ forms.lightswitchField({
+    label:        "Enable clearing cache for lists containing entries?"|t,
+    instructions: "If enabled, all paths that have been defined down here will be clear when an entry is saved"|t,
+    id:           'clearentrylists',
+    name:         'clearentrylists',
+    on:           settings.clearentrylists,
+    errors:       settings.getErrors('clearentrylists')
+}) }}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Lists"|t,
+    id:           'listpath',
+    name:         'listpath',
+    instructions: "Please specify the paths (seperated by a space and a comma: \" ,\") for which the cache must be cleared when an entry is saved
+                     <br /><br />
+                    <b>Example:</b> api/entries, api/mysectionname/entries"|t,
+    value:        settings.listpath,
+    autofocus:    true,
+    errors:       settings.getErrors('listpath')
+}) }}
